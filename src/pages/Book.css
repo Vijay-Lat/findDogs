@@ -117,8 +117,9 @@
   html,
   body {
     font-family: 'Lovers Quarrel', cursive;
-    background: #FFE5B4;
+    background: #7B3F00;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
   }
   html {
     height: 100%;

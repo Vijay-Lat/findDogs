@@ -1,8 +1,5 @@
 .bookBG {
     /* background-image: url("https://images.pexels.com/photos/13354414/pexels-photo-13354414.jpeg?cs=srgb&dl=pexels-lisa-fotios-13354414.jpg&fm=jpg&_gl=1*1qfezbv*_ga*MTQ0NTYyMzkxNi4xNjY3NzUxNjI1*_ga_8JE65Q40S6*MTY2NzkxMTg3Ny41LjEuMTY2NzkxMjI3My4wLjAuMA..") !important; */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     overflow: hidden;
     text-align: center !important;
     height: 100%;

@@ -10,7 +10,6 @@ const store = createStore(counterReducer)
 
 const getTheCounter = ()=>{
     const currentState = store?.getState()
-    console.log(currentState)
 }
 
 store.subscribe(getTheCounter)
