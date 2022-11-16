@@ -11,9 +11,7 @@ const CanvasDrawing = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.collectTax.users);
   useEffect(() => {
-    console.log(canvasRef, "ref");
     const ctx = canvasRef.current.getContext("2d");
-    console.log(ctx);
     // ctx.fillStyle = "#ffffff";
     // ctx.fillRect(10, 20, 200, 300);
     const image = new Image();
@@ -27,7 +25,6 @@ const CanvasDrawing = () => {
         canvasRef.current.clientHeight
       );
       const pixels = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
-      console.log(pixels, "pixels");
       let particlesArray = [];
       const numberOfParticles = 5000;
       let mappedImage = [];
@@ -106,7 +103,6 @@ const CanvasDrawing = () => {
     dispatch(collectTaxSliceAction.collectCGST({ userName }));
   };
 
-  console.log(user, "user");
 
   return (
     <div>

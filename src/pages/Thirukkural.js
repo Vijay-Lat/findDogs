@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useReducer, lazy } from "react";
 import axios from "axios";
 import styles from "./Thirukkural.module.css";
-import thiruvalluvar from "../images/valluvar2.jpg";
+import thiruvalluvar from "../images/valluvan.jpg";
+// import oldPaper from "../images/oldpaper.jpg";
 import { Button, Card, Input } from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
 const Dialog = lazy(() => import("@mui/material/Dialog"));
-// const DialogTitle = lazy(()=>import('@mui/material/DialogTitle'))
 let initialShowCover = {
   bookCover: true,
   numberOfKural: 1,
@@ -93,7 +93,8 @@ const Thirukkural = () => {
     coverDispatch({ type: "dialog" });
   };
   const kuralChangeHandler = (e) => {
-    coverDispatch({ type: "pageNumber", payload: +e.target.value });
+    if (!isNaN(+e.target.value))
+      coverDispatch({ type: "pageNumber", payload: +e.target.value });
   };
 
   const submitPageNumberHandler = () => {
@@ -129,7 +130,18 @@ const Thirukkural = () => {
       <div style={{ marginBottom: "10px" }}>
         {showCover?.bookCover && (
           <div className={styles.bookCover}>
-            <img src={thiruvalluvar} />
+            <div className={styles.gfg}>
+              <img src={thiruvalluvar} />
+              {/* <div className={styles.first}>
+              <h3 >திருக்குறள்</h3>
+              <span style={{fontSize:"15px"}}>(Thirukkural)</span><br />
+              <span>Universal Scripture</span>
+              </div>
+              <div className={styles.third}>
+              <h3 >திருவள்ளுவர் </h3>
+              <span style={{fontSize:"15px"}}>(Thiruvalluvar)</span>
+              </div> */}
+            </div>
             <Button className={styles.buttonColor} onClick={openBookHandler}>
               படி-Read
             </Button>
@@ -137,12 +149,18 @@ const Thirukkural = () => {
         )}
         {!showCover?.bookCover && (
           <div className={""}>
-            <Card className={styles.card}>
+            <Card
+              style={{
+                backgroundImage:
+                  "url('https://www2.gvsu.edu/gordonro/older-paper.gif')",
+              }}
+              className={styles.card}
+            >
               <header className={styles.header}>
                 <h3>{showCover.thirukkural?.chap_tam}</h3>
                 <span>({showCover.thirukkural?.chap_eng})</span>
               </header>
-              <section style={{ color: "#003300" }}>
+              <section style={{ color: "#5C4033" ,fontWeight:"bold"}}>
                 <span>
                   {showCover?.numberOfKural}.&nbsp;
                   <em>{showCover.thirukkural?.line1}</em>
@@ -178,7 +196,7 @@ const Thirukkural = () => {
         )}
       </div>
       <footer className={styles.copyRight}>
-        <small>Website © Copyright-VMkrishna</small>
+        <small>Website © Copyrights@VMkrishna</small>
       </footer>
     </div>
   );

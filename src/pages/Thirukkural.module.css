@@ -6,6 +6,28 @@
     padding-left: auto;
 }
 
+.gfg {
+    margin: 3%;
+    position: relative;
+}
+
+.first {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+}
+
+.second {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+}
+.third {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+}
+
 
 
 /* cover of the book  */
@@ -20,16 +42,19 @@
 
 .bookCover img {
     height: 30rem;
-    border-radius: 10px
+    border-radius: 10px;
+    width: 100%;
 }
 
 .buttonColor {
     text-transform: none !important;
-    background-color:  #4681f4 !important;
+    background-color: #4681f4 !important;
     color: azure !important;
     margin: 10px !important;
+    z-index: 2;
 }
-.card{
+
+.card {
     padding: 10px 10px 10px 10px;
     width: 350px;
     height: auto;
@@ -39,21 +64,24 @@
     margin: 10px;
     color: #013220;
 }
-h3{
+
+h3 {
     color: red;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
+
 .float {
     margin-top: 5px;
     color: #013220;
     font-weight: bold;
 }
-.copyRight{
-     color: rgba(0,0,0,.7); text-shadow: 0 1px rgba(255, 255, 255, 0.1);
-     position: absolute;
-     bottom:0;
-     left: 42%;
-     display: flex;
-     justify-self: center;
-     justify-content: center;
-     align-items: center;
+
+.copyRight {
+    color: rgba(0, 0, 0, .7);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: 10px;
+    left: 5rem;
+
 }
